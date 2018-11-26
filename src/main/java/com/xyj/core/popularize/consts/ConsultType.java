@@ -14,7 +14,16 @@ public enum ConsultType implements EnumType{
     PRE_SALE(0, "售前咨询"),
 
     @SerializedName("1")
-    AFTER_SALE(1, "售后咨询");
+    AFTER_SALE(1, "售后咨询"),
+
+    @SerializedName("2")
+    COOPERATION(2, "合作"),
+
+    @SerializedName("3")
+    TRIAL(3, "试用"),
+
+    @SerializedName("4")
+    DEMONSTRATION(4, "演示");
 
     private int    id;
     private String description;

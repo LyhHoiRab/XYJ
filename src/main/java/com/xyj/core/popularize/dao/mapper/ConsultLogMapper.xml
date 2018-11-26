@@ -156,6 +156,7 @@
         <result column="content"     property="content"    javaType="java.lang.String"/>
         <result column="url"         property="url"        javaType="java.lang.String"/>
         <result column="type"        property="type"       typeHandler="ConsultTypeHandler"/>
+        <result column="company"     property="company"    javaType="java.lang.String"/>
         <result column="status"      property="status"     typeHandler="ConsultStatusHandler"/>
         <result column="create_time" property="createTime" javaType="java.util.Date"/>
         <result column="update_time" property="updateTime" javaType="java.util.Date"/>
@@ -172,7 +173,8 @@
                url,
                type,
                status,
-               create_time
+               create_time,
+               company
           ) VALUE (
                #{id,         jdbcType=VARCHAR},
                #{customer,   jdbcType=VARCHAR},
@@ -182,7 +184,8 @@
                #{url,        jdbcType=VARCHAR},
                #{type,       typeHandler=ConsultTypeHandler},
                #{status,     typeHandler=ConsultStatusHandler},
-               #{createTime, jdbcType=TIMESTAMP}
+               #{createTime, jdbcType=TIMESTAMP},
+               #{company,    jdbcType=VARCHAR}
           )
     </insert>
 
@@ -212,6 +215,9 @@
              </if>
              <if test="updateTime != null">
                  update_time = #{updateTime, jdbcType=TIMESTAMP},
+             </if>
+             <if test="company != null and company != ''">
+                 company = #{company, jdbcType=VARCHAR},
              </if>
          </set>
           WHERE id = #{id}

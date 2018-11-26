@@ -5,6 +5,7 @@ CREATE TABLE `consult_log` (
   `phone` varchar(50) DEFAULT NULL,
   `wechat` varchar(50) DEFAULT NULL,
   `url` varchar(256) NOT NULL,
+  `company` varchar(100) DEFAULT NULL,
   `type` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `create_time` datetime NOT NULL,

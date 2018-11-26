@@ -24,7 +24,9 @@ public class ConsultLog extends Entity implements Createable, Updateable{
     private String        content;
     //来源
     private String        url;
-    //咨询类型(0:售前咨询, 1:售后咨询)
+    //公司名
+    private String        company;
+    //咨询类型
     private ConsultType   type;
     private ConsultStatus status;
     private Date          createTime;
